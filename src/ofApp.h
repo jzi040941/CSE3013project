@@ -63,4 +63,7 @@ public:
 	void calc_point();
 
 	vector<water> wa;	// 물이 흐르는 자취를 표현하기 위한 water클래스
+
+	//물방울 에니메이션 관련 변수 
+	uint64_t drawstartframe;
 };

@@ -19,7 +19,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	
+
 }
 
 //--------------------------------------------------------------
@@ -62,7 +62,8 @@ void ofApp::draw(){
 		ofSetLineWidth(2);
 		if (draw_sub_flag) {
 			for (unsigned int i = 0; i < wa.size(); i++) {
-				wa[i].draw();
+				if (ofGetFrameNum() > drawstartframe + wa[i].water_dot_diameter * i)
+					wa[i].draw();
 			}
 		}
 	}
@@ -95,7 +96,7 @@ void ofApp::keyPressed(int key){
 	}
 	if (key == 's') {
 		if (!load_flag) return;
-
+		drawstartframe = ofGetFrameNum();
 		draw_sub_flag = 1;
 	}
 	if (key == 'e') {
