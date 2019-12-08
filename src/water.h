@@ -3,7 +3,7 @@
 #define EPSILON 0.01
 
 typedef struct _coordinate {
-	int x, y;
+	float x, y;
 }coordinate;
 class water{
 	public:
